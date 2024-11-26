@@ -20,18 +20,18 @@ let text = document.getElementById("yoda_wisdom");
 let yoda = document.getElementById("yoda");
 let textContainer = document.querySelector(".speech");
 const yoda_onclick = function () {
-    text.innerHTML = "";
     console.log("Yoda clicked");
     let index = Math.floor(Math.random()*list_wisdom.length);
     console.log(index);
-    for (let i=0; i<list_wisdom[index].length; i++) {
-        setTimeout(() => {
-            text.innerHTML += list_wisdom[index].charAt(i);
-            console.log(list_wisdom[index].charAt(i));
-        }, 500);
-    }
-    // textContainer.style.animation = "none";
-    // setTimeout(() => {
-    //     textContainer.style.animation = ''; // Restart
-    //   }, 1);
+    text.innerHTML = list_wisdom[index];
+    // for (let i=0; i<list_wisdom[index].length; i++) {
+    //     setTimeout(() => {
+    //         text.innerHTML += list_wisdom[index].charAt(i);
+    //         console.log(list_wisdom[index].charAt(i));
+    //     }, 1000);
+    textContainer.style.animation = "none";
+    setTimeout(() => {
+        textContainer.style.animation = ''; // Restart
+      }, 1);
+
 }
